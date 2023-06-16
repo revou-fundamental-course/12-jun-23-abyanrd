@@ -1,0 +1,37 @@
+h1 {
+    color: red;
+}
+
+p {
+    color: rgb(255, 255, 255);
+}
+
+button {
+    width: 100%;
+}
+
+button:hover {
+    background-color: rgba(128, 128, 128, 0.363);
+}
+
+.boxsizing {
+    background-color: blue;
+    border: 10px solid red;
+    width: 200px;
+    padding-left: 50px;
+    box-sizing: border-box;
+}
+
+.nobox {
+    background-color: darkblue;
+    border: 20px solid red;
+    width: 200px;
+    padding-left: 50px;
+    box-sizing: border-box;
+}
+
+.flexbox {
+    display: flex;
+    background-color: red;
+    flex-direction: row-reverse;
+}
