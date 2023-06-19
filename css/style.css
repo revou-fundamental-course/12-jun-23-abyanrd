@@ -73,7 +73,7 @@ footer {
 
 /*ID*/
 #inputField,
-#methodField {
+#outputField {
   outline: none;
   font-size: 20px;
   border-radius: 8px;
@@ -83,14 +83,14 @@ footer {
 }
 
 #inputField:focus,
-#methodField:focus {
+#outputField:focus {
   border: solid rgb(128, 128, 128);
 }
 
 #inputField::-webkit-inner-spin-button,
 #inputField::-webkit-outer-spin-button,
-#methodField::-webkit-inner-spin-button,
-#methodField::-webkit-outer-spin-button {
+#outputField::-webkit-inner-spin-button,
+#outputField::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
 
