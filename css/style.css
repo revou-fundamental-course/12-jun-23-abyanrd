@@ -114,6 +114,14 @@ footer {
   border: solid rgb(128, 128, 128);
 }
 
+#definition2 {
+  display: none;
+}
+
+#formula2{
+  display: none;
+}
+
 /*class*/
 .Definition {
   text-align: center;
