@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="assets/icon.png">
-    <script src="js/script.js"></script>
     <title>Temperature Conversion</title>
 </head>
 
@@ -23,9 +22,9 @@
         <label id="celsius" for="inputField">Celsius</label>
         <input type="number" id="inputField" placeholder="Input" />
         <div class="InputButtonSection">
-            <button onclick="konversi()">Convert</button>
+            <button onclick="convert()">Convert</button>
             <button onclick="reset()">Reset</button>
-            <button id="reverse" onclick="reverse()">Reverse</button>
+            <button onclick="reverse()">Reverse</button>
         </div>
         <label id="fahrenheit" for="outputField">Fahrenheit</label>
         <input type="text"" id="outputField" placeholder="Result" readonly/>
@@ -45,7 +44,7 @@
         <h3>Copyright © <a href="https://lynk.id/abyanrd" id="link" target="_blank">Abyan</a> 2023</h3>
     </footer>
 </body>
-
+<script src="js/script.js"></script>
 </html>
 <!-- element dibawah ini untuk dipanggil di fungsi reverse pada javascript -->
 <p id="definition2">Enter the temperature in degrees Fahrenheit (°F) in the input box, then click the convert button and you will get the conversion result in Celsius (°C)</p>

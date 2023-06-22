@@ -1,27 +1,53 @@
-//ini rumus
-// let rumusC = (("") * 9/5) + 32 ;
-// let rumusF = (("") - 32) * 5/9 ;
-
-// var gantiDefinisi = 'Enter the temperature in degrees Fahrenheit (°F) in the input box, then click the convert button and you will get the conversion result in Celsius (°C)'
-// const gantiFormula = 'To convert Fahrenheit to Celsius, you can use the following formula: Celsius = (Fahrenheit - 32) × 5/9 To convert a temperature from Fahrenheit to Celsius,  subtract 32 from the Fahrenheit value and then multiply the result by 5/9. The resulting value will be the equivalent temperature in Celsius.'
-
-//fungsi ini dipanggil pada tombol convert
-function konversi() {
+//fungsi ini dipanggil pada tombol convert ketika input celsius
+function convertToFahrenheit() {
     // ambil nilai input dari kolom Celsius
     const celsiusInput = document.getElementById('inputField');
     const celsiusValue = parseFloat(celsiusInput.value);
 
-    // konversi ke Fahrenheit
-    const fahrenheitValue = (celsiusValue * 9/5) + 32;
+    // jika tidak ada input maka keluar alert
+    if (isNaN(celsiusValue)) {
+        alert('Silahkan masukkan nomor pada kolom input');
+        return;
+    }
+
+    // konversi ke fahrenheit
+    const fahrenheitValue = (celsiusValue * 9 / 5) + 32;
 
     // menampilkan hasil konversi di kolom output
     const outputField = document.getElementById('outputField');
-    outputField.value = fahrenheitValue + ('°F')
+    outputField.value = fahrenheitValue.toFixed(2) //+ ('°F')
 
     // menampilkan metode perhitungan di kolom calculation method
-    const methodField = document.getElementById('methodField');
-    methodField.value = celsiusValue + (' * 9/5 + 32 = ') + outputField.value;
-}
+    var methodField = document.getElementById('methodField');
+    methodField.value = '(' + celsiusValue + '°C' + ' * 9/5) + 32 = ' + outputField.value + '°F';
+
+
+};
+
+//fungsi ini dipanggil pada tombol convert ketika input fahrenheit
+function convertToCelsius() {
+    // ambil nilai input dari kolom fahrenheit
+    const celsiusInput = document.getElementById('inputField');
+    const celsiusValue = parseFloat(celsiusInput.value);
+
+    // jika tidak ada input maka keluar alert
+    if (isNaN(celsiusValue)) {
+        alert('Silahkan masukkan nomor pada kolom input');
+        return;
+    }
+
+    // konversi ke celsius
+    const fahrenheitValue = (celsiusValue - 32) * 9 / 5;
+
+    // menampilkan hasil konversi di kolom output
+    const outputField = document.getElementById('outputField');
+    outputField.value = fahrenheitValue.toFixed(2); //+ ('°C')
+
+    // menampilkan metode perhitungan di kolom calculation method
+    var methodField = document.getElementById('methodField');
+    methodField.value = '(' + celsiusValue + '°F' + ' - 32) * 9/5 = ' + outputField.value + '°C';
+};
+
 
 //fungsi ini dipanggil pada tombol reset
 function reset() {
@@ -53,4 +79,34 @@ function reverse() {
     var formula = formula1.innerHTML;
     formula1.innerHTML = formula2.innerHTML;
     formula2.innerHTML = formula;
+
+    //menyimpan nilai input dan output
+    const inputField = document.getElementById('inputField');
+    const outputField = document.getElementById('outputField');
+    const inputTemp = inputField.value;
+    const outputTemp = outputField.value;
+
+    //menukar nilai input dan output
+    inputField.value = outputTemp;
+    outputField.value = inputTemp;
+
+    //sama seperti dibawah
+    const celsiusLabel = document.getElementById('celsius');
+    const labelValue = celsiusLabel.innerHTML;
+    if (labelValue === 'Celsius') {
+        convertToFahrenheit();
+    } else if (labelValue === 'Fahrenheit') {
+        convertToCelsius();
+    }
+}
+
+//fungsi ini untuk tombol convert
+function convert() {
+    const celsiusLabel = document.getElementById('celsius');
+    const labelValue = celsiusLabel.innerHTML;
+    if (labelValue === 'Celsius') {
+        convertToFahrenheit();
+    } else if (labelValue === 'Fahrenheit') {
+        convertToCelsius();
+    }
 }

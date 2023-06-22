@@ -92,22 +92,24 @@ footer {
 #outputField::-webkit-inner-spin-button,
 #outputField::-webkit-outer-spin-button {
   -webkit-appearance: none;
-}
+}/* kode diatas ini untuk menghilangkan tombol atas bawah pada box di samping kanan biar kelihatan clean */
 
 #link {
   cursor: pointer;
   text-decoration: none;
   color: #2B3467;
 }
-/* kode diatas ini untuk menghilangkan tombol atas bawah pada box di samping kanan biar kelihatan clean */
+
 
 #methodField {
   outline: none;
   font-size: 20px;
+  text-align: center;
   border-radius: 8px;
   background-color: #fcffe7;
   border: solid rgba(128, 128, 128, 0.562);
   padding: 50px;
+  width: 500px;
 }
 
 #methodField:focus {
@@ -167,14 +169,7 @@ footer {
   padding-left: 13px;
   font-weight: 500;
   border: solid ;
-  filter: blur(3px);
   border-radius: 8px;
   margin-left: 13vw;
   margin-right: 13vw;
-  transition: all 0.5s;
-}
-
-.Formula p:hover {
-  filter: none;
-  
 }
